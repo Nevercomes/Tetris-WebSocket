@@ -15,7 +15,7 @@ imooc原课程网址：https://www.imooc.com/video/15619
    3. 每隔十秒在底部添加 1 个干扰行，若游戏时间超过 2 分钟则变为增加 2 行
    4. 若同时消除两行及以上则在对方游戏区域内添加一个底部干扰行
    
-   双人版除了直接打开本地文件外你还可以通过Tomcat发布JavaWeb在本地进行测试...只需用同样的方式node wsServer.js启动Socket.io的服务即可
+   双人版除了直接打开本地文件外你还可以通过Tomcat发布JavaWeb在本地进行测试...只需用同样的方式进入Tomcat加载后的文件启动node wsServer.js来开启Socket.io的服务即可
 3. **天梯版：** JavaEE - WebSocket双人双屏天梯积分匹配，真实对战（开发中...）
 
 #### Technical selection

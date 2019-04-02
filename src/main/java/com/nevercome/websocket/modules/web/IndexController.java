@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
  * @Date: 2019/4/2
  */
 @Controller
-@RequestMapping(value = "/tetris")
+@RequestMapping(value = "")
 public class IndexController  {
 
     @RequestMapping(value = "/single")
