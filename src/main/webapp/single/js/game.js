@@ -250,9 +250,9 @@ var Game = function () {
     //游戏结束
     var gameOver = function (win) {
         if (win) {
-            resultDiv.innerHTML = "You Win!";
+            resultDiv.innerHTML = "YOU WIN!";
         } else {
-            resultDiv.innerHTML = "You Lose!"
+            resultDiv.innerHTML = "TOU LOSE!"
         }
     };
     //干扰因素： 底部增加干扰行

@@ -1,4 +1,4 @@
-package com.nevercome.websocket;
+package com.nevercome.websocket.modules;
 
 import javax.websocket.*;
 import javax.websocket.server.ServerEndpoint;
