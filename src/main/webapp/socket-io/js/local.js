@@ -2,7 +2,7 @@ var Local = function (socket) {
     //游戏对象
     var game;
     //时间间隔
-    var INTERVAL = 200;
+    var INTERVAL = 300;
     //定时器
     var timer = null;
     //时间计数器
@@ -52,23 +52,20 @@ var Local = function (socket) {
     };
     //时间函数
     var timeFunc = function () {
-        timeCount += 1;
-        if (timeCount == 5) {
-            time += 1;
-            timeCount = 0;
-            game.setTime(time);
-            if(time % 10 == 0 && time < 120) {
-                var tailLines = generateBottomLine(1);
-                game.addTailLines(tailLines);
-                socket.emit("addTailLines", tailLines);
-            }
-            if (time % 10 == 0 && time >= 120) {
-                var tailLines = generateBottomLine(2);
-                game.addTailLines(tailLines);
-                socket.emit("addTailLines", tailLines);
-            }
-            socket.emit('time', time);
+        timeCount += 3;
+        time += 1;
+        game.setTime(timeCount);
+        if (time % 45 == 0 && timeCount < 1200) {
+            var tailLines = generateBottomLine(1);
+            game.addTailLines(tailLines);
+            socket.emit("addTailLines", tailLines);
         }
+        if (time % 45 == 0 && timeCount >= 1200) {
+            var tailLines2 = generateBottomLine(2);
+            game.addTailLines(tailLines2);
+            socket.emit("addTailLines", tailLines2);
+        }
+        socket.emit('time', timeCount);
     };
     //移动
     var move = function () {
@@ -83,7 +80,7 @@ var Local = function (socket) {
                 game.addScore(lineCount);
                 socket.emit('line', lineCount);
                 var bottomLines
-                if(lineCount > 1) {
+                if (lineCount > 1) {
                     bottomLines = generateBottomLine(1);
                     socket.emit('bottomLines', bottomLines);
                 }
@@ -136,23 +133,23 @@ var Local = function (socket) {
         document.onkeydown = null;
     };
 
-    socket.on('start', function(){
+    socket.on('start', function () {
         document.getElementById('waiting').innerHTML = '';
         start();
     })
 
-    socket.on('lose', function() {
+    socket.on('lose', function () {
         game.gameOver(true);
         stop();
     })
 
-    socket.on('leave',function(){
+    socket.on('leave', function () {
         document.getElementById('local_gameover').innerHTML = 'OPPNENT LEFT！'
         document.getElementById('remote_gameover').innerHTML = 'LEFT ALREADY...'
         stop();
     })
 
-    socket.on('bottomLines', function(data){
+    socket.on('bottomLines', function (data) {
         game.addTailLines(data);
         // console.log('bottomLines');
         socket.emit('addTailLines', data);

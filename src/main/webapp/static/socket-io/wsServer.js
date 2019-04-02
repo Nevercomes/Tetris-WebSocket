@@ -1,5 +1,5 @@
 var app = require('http').createServer();
-var io = require('socket-io/socket.io')(app);
+var io = require('socket.io')(app);
 
 var PORT = 3000;
 app.listen(PORT);

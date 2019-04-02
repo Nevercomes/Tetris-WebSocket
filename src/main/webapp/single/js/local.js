@@ -2,7 +2,7 @@ var Local = function () {
     //游戏对象
     var game;
     //时间间隔
-    var INTERVAL = 200;
+    var INTERVAL = 300;
     //定时器
     var timer = null;
     //时间计数器
@@ -47,15 +47,16 @@ var Local = function () {
     };
     //时间函数
     var timeFunc = function () {
-        timeCount += 1;
-        if (timeCount == 5) {
-            time += 1;
-            timeCount = 0;
-            game.setTime(time);
-            if (time % 10 == 0) {
+        timeCount += 3;
+        time += 1;
+        // if (timeCount == 5) {
+        //     time += 1;
+        //     timeCount = 0;
+            game.setTime(timeCount);
+            if (time % 45 == 0) {
                 game.addTailLines(generateBottomLine(1));
             }
-        }
+        // }
     };
     //移动
     var move = function () {

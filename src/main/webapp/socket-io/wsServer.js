@@ -16,7 +16,7 @@ var bindEventListener = function(socket, event){
 			socketMap[socket.clientNum + 1].emit(event, data);
 		}
 	})
-}
+};
 
 io.on('connection', function(socket){
 

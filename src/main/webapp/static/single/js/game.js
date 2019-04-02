@@ -223,7 +223,7 @@ var Game = function () {
     };
     //设置时间
     var setTime = function (time) {
-        timeDiv.innerHTML = time;
+        timeDiv.innerHTML = (time/10).toFixed(1);
     };
     //增加分数
     var addScore = function (lineCount) {
