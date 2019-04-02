@@ -1,5 +1,5 @@
-#### Tetris-WebSocket
-##### Introduction
+### Tetris-WebSocket
+#### Introduction
 imooc原课程网址：https://www.imooc.com/video/15619  
 原课程完成双人版
 1. **Single版：** 俄罗斯方块的JS实现，完整的游戏逻辑，包括七种方块、旋转、下坠、消行计分、定时增加干扰行。
@@ -18,7 +18,7 @@ imooc原课程网址：https://www.imooc.com/video/15619
    双人版除了直接打开本地文件外你还可以通过Tomcat发布JavaWeb在本地进行测试...只需用同样的方式node wsServer.js启动Socket.io的服务即可
 3. **天梯版：** JavaEE - WebSocket双人双屏天梯积分匹配，真实对战（开发中...）
 
-##### Technical selection
+#### Technical selection
 **双人版**
 1. Socket.io 1.3.7
 2. JS
